@@ -11,7 +11,7 @@ function main() {
     bst.insert(32, 'this is a value');
     bst.insert(36, { value: 'what a value!' });
     bst.insert(37, 'this is a value');
-    getHeight(bst)
+    isSearchTree(bst)
 }
 
 function getHeight(tree, h = 0, l = null, r = null) {
@@ -39,6 +39,38 @@ function getHeight(tree, h = 0, l = null, r = null) {
 
 }
 
+
+function isSearchTree(tree, bool = false) {
+    let l = tree.left ? tree.left : null;
+    let r = tree.right ? tree.right : null;
+    let val = tree.key;
+
+    if (!l && !r) {
+        console.log('Is search tree? ', bool)
+        return bool
+    }
+
+    if (l.key > val > r.key) {
+        bool = true;
+        isSearchTree(l, bool)
+        isSearchTree(r, bool)
+    } else {
+        // bool = false;
+        console.log('Is search tree? ', bool)
+        return bool;
+    }
+
+
+
+    console.log('Is search tree? ', bool)
+    return bool;
+
+
+
+
+
+
+}
 
 
 main();
