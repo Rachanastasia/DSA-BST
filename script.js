@@ -15,9 +15,9 @@ function main() {
 }
 
 function display(tree, branch = 'main') {
-
     const { left, right, key } = tree
-    console.log('Branch:', branch)
+
+    console.log('Branch:', branch, 'from ', tree.parent ? tree.parent.key : 'none')
 
     console.log('KEY: ', key, '| Left:', left !== null ? left.key : "/", '| Right:', right !== null ? right.key : "/")
 
@@ -28,9 +28,6 @@ function display(tree, branch = 'main') {
 
     if (tree.parent === null) {
         console.log('HEAD: ', key)
-
-
-
     }
 
     if (left) {
@@ -42,8 +39,6 @@ function display(tree, branch = 'main') {
         console.log('                                                    ')
         display(right, 'right')
     }
-
-
 }
 
 
@@ -105,7 +100,15 @@ function isSearchTree(tree, bool = false) {
 }
 
 
-//function thirdLargestNode
+function thirdLargestNode(tree) {
+
+    return tree;
+
+
+
+
+
+}
 
 
 main();
