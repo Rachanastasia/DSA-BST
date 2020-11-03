@@ -1,0 +1,2 @@
+const BinarySearchTree = require('./bst');
+
