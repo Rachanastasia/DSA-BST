@@ -1,18 +1,55 @@
 const BinarySearchTree = require('./bst');
 
 function main() {
-    const bst = new BinarySearchTree(9, 'this is a value');
-    bst.insert(0, 'this is a value');
+    const bst = new BinarySearchTree(5, 'value');
+    bst.insert(3, 'value');
+    bst.insert(7, 'value');
+    bst.insert(2, 'value');
+    bst.insert(4, 'value');
+    bst.insert(6, 'value');
+    bst.insert(9, 'value');
+    bst.insert(2, 'value');
+    bst.insert(1, 'value');
 
-    bst.insert(4, 'this is a value');
-
-    bst.insert(3, 'this is a value');
-    bst.insert(9, ['this is a value', 'this is a value', 'this is a value', 'this is a value']);
-    bst.insert(32, 'this is a value');
-    bst.insert(36, { value: 'what a value!' });
-    bst.insert(37, 'this is a value');
-    isSearchTree(bst)
+    display(bst)
 }
+
+function display(tree, branch = 'main') {
+
+    const { left, right, key } = tree
+    console.log('Branch:', branch)
+
+    console.log('KEY: ', key, '| Left:', left !== null ? left.key : "/", '| Right:', right !== null ? right.key : "/")
+
+    if (!left && !right) {
+        console.log('End of tree | Last leaf:', key)
+        console.log('                                                    ')
+    }
+
+    if (tree.parent === null) {
+        console.log('HEAD: ', key)
+
+
+
+    }
+
+    if (left) {
+        console.log('                                                    ')
+        display(left, 'left')
+    }
+
+    if (right) {
+        console.log('                                                    ')
+        display(right, 'right')
+    }
+
+
+}
+
+
+
+
+
 
 function getHeight(tree, h = 0, l = null, r = null) {
 
@@ -65,12 +102,10 @@ function isSearchTree(tree, bool = false) {
     console.log('Is search tree? ', bool)
     return bool;
 
-
-
-
-
-
 }
+
+
+//function thirdLargestNode
 
 
 main();

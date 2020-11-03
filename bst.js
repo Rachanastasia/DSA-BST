@@ -15,7 +15,7 @@ class BinarySearchTree {
 
         else if (key < this.key) {
             if (!this.left) {
-                console.log('Tree', this.key, 'Parent', this.parent)
+
                 this.left = new BinarySearchTree(key, value, this);
             }
 
@@ -27,7 +27,7 @@ class BinarySearchTree {
 
         else {
             if (this.right == null) {
-                console.log('NEW TREE', this.key, 'right:', this.right, 'left:', this.left)
+
                 this.right = new BinarySearchTree(key, value, this);
             }
             else {
